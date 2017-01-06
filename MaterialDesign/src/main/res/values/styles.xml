@@ -1,0 +1,97 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">#03A9F4</item>
+        <item name="android:colorPrimaryDark">#284cdc</item>
+        <item name="android:colorControlActivated">#03A9F4</item>
+        <item name="android:colorControlNormal">#E91E63</item>
+        <item name="android:textColorPrimary">#ffffff</item>
+    </style>
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--当有Toolbar时-->
+    <style name="AppTheme3" parent="Theme.AppCompat.Light.NoActionBar">
+         <!--导航栏底色-->
+         <item name="colorPrimary">@color/accent_material_dark</item>
+         <!--状态栏底色-->
+         <item name="colorPrimaryDark">@color/accent_material_light</item>
+         <!--导航栏上的标题颜色-->
+         <item name="android:textColorPrimary">@android:color/black</item>
+         <!--Activity窗口的颜色-->
+         <item name="android:windowBackground">@color/material_blue_grey_800</item>
+         <!--按钮选中或者点击获得焦点后的颜色-->
+         <item name="colorAccent">#00ff00</item>
+         <!--和 colorAccent相反，正常状态下按钮的颜色-->
+         <item name="colorControlNormal">#ff0000</item>
+         <!--Button按钮正常状态颜色-->
+         <item name="colorButtonNormal">@color/accent_material_light</item>
+         <!--EditText 输入框中字体的颜色-->
+         <item name="editTextColor">@android:color/white</item>
+    </style>
+
+    <style name="appBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimary">#4876FF</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">#3A5FCD</item>
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <!-- SearchView -->
+        <item name="searchViewStyle">@style/MySearchViewStyle</item>
+    </style>
+
+    <style name="Base.Theme.DesignDemo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryDark">#512DA8</item>
+        <item name="colorAccent">#FF4081</item>
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+    <color name="window_background">#FFF5F5F5</color>
+
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!--Background for the search query section (e.g. EditText)  -->
+        <!--<item name="queryBackground">...</item>  -->
+        <!--Background for the actions section (e.g. voice, submit)  -->
+        <!--<item name="submitBackground">...</item>  -->
+        <!--Close button icon  -->
+        <!--<item name="closeIcon">...</item>  -->
+        <!--Search button icon  -->
+        <!--<item name="searchIcon">...</item>  -->
+        <!--Go/commit button icon  -->
+        <!--<item name="goIcon">...</item>  -->
+        <!--Voice search button icon  -->
+        <!--<item name="voiceIcon">...</item>  -->
+        <!--Commit icon shown in the query suggestion row  -->
+        <!--<item name="commitIcon">...</item>  -->
+        <!--Layout for query suggestion rows  -->
+        <!--<item name="suggestionRowLayout">...</item>  -->
+    </style>
+
+
+    <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimaryDark">#03A9F4</item>
+        <item name="colorPrimary">#03A9F4</item>
+        <item name="colorControlActivated">#03A9F4</item>
+        <item name="colorControlNormal">#E91E63</item>
+    </style>
+
+
+    <!--<item name="windowActionBar">false</item>-->
+    <!--<item name="windowNoTitle">true</item>-->
+    <!--1、Android:colorControlActivated：表示CheckBox、EditText、Switch、Spinner、RadioButton等控件激活时候的色调，与之相同作用的一个属性：android:colorAccent。作用也是一样的。-->
+    <!--2、android:colorControlNormal：表示CheckBox、EditText、Switch、Spinner、RadioButton等控件默认时的色调-->
+    <!--3、android:colorPrimary：设置标题栏的背景颜色-->
+    <!--4、android:colorPrimaryDark：设置状态栏的颜色-->
+    <!--5、android:textColorPrimary：设置标题栏上字体的颜色-->
+    <!--android:windowBackground:  工作区的背景色-->
+    <!--android:navigationBarColor: 手机最底下的home键-->
+
+</resources>
