@@ -68,6 +68,7 @@ public class ToolbarActivity extends AppCompatActivity {
             }
         });
 
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.id_drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.id_nv_menu);
         final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.content_relative);

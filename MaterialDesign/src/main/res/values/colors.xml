@@ -3,4 +3,38 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="window_background">#FFF5F5F5</color>
+
+    <color name="divider">#ffd2d2d2</color>
+
+
+    <!--状态栏的背景色-->
+    <color name="darkPrimaryColor">#00796B</color>
+    <!--标题栏背景色-->
+    <color name="primaryColor">#009688</color>
+    <!--标题栏的文字颜色-->
+    <color name="primaryTextColor">#212121</color>
+    <!--未知-->
+    <color name="lightPrimaryColor">#B2DFDB</color>
+    <!--文字颜色-->
+    <color name="text_iconColor">#FFFFFF</color>
+    <!--重点色-->
+    <color name="accentColor">#FF5722</color>
+
+    <color name="secondaryTextColor">#757575</color>
+    <color name="driverColor">#BDBDBD</color>
+
+    <!--蓝粉搭配-->
+    <color name="blueDarkPrimaryColor">#303F9F</color>
+    <color name="bluePrimaryColor">#3F51B5</color>
+    <color name="blueLightPrimaryColor">#C5CAE9</color>
+    <color name="blueAccentColor">#FF4081</color>
+    <!--1、Android:colorControlActivated：表示CheckBox、EditText、Switch、Spinner、RadioButton等控件激活时候的色调，与之相同作用的一个属性：android:colorAccent。作用也是一样的。-->
+    <!--2、android:colorControlNormal：表示CheckBox、EditText、Switch、Spinner、RadioButton等控件默认时的色调-->
+    <!--3、android:colorPrimary：设置标题栏的背景颜色-->
+    <!--4、android:colorPrimaryDark：设置状态栏的颜色-->
+    <!--5、android:textColorPrimary：设置标题栏上字体的颜色-->
+    <!--android:windowBackground:  工作区的背景色-->
+    <!--android:navigationBarColor: 手机最底下的home键-->
+
 </resources>
