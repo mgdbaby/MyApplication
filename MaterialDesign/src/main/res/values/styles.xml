@@ -52,9 +52,14 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/darkPrimaryColor</item>
         <item name="colorAccent">@color/accentColor</item>
-        <item name="android:textColorPrimary">@color/text_iconColor</item>
+        <item name="android:textColorPrimary">@color/secondaryTextColor</item>
         <item name="android:textColorSecondary">@color/secondaryTextColor</item>
         <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme4" parent="Base.Theme.DesignDemo">
+
     </style>
 
 

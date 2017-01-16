@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/id_drawer_layout"
         android:layout_width="match_parent"
@@ -17,28 +18,28 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager"
+            <include layout="@layout/top"/>
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
-            </android.support.v4.view.ViewPager>
-
+            </FrameLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.4dp"
                 android:background="@color/driverColor"/>
-
-            <include layout="@layout/bottom"/>
-
+            <include layout="@layout/bottom2"/>
         </LinearLayout>
 
         <android.support.design.widget.NavigationView
+            android:fitsSystemWindows="true"
             android:id="@+id/id_nv_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:fitsSystemWindows="true"
+            android:background="#ffffff"
             app:headerLayout="@layout/header_just_username"
             app:menu="@menu/menu_drawer" />
     </android.support.v4.widget.DrawerLayout>

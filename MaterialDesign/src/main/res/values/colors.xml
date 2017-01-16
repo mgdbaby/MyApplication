@@ -9,6 +9,7 @@
 
     <color name="tab_gray">#9a9a9a</color>
     <color name="tab_green">#46c01c</color>
+    <color name="primaryColorBelow">#01b3a1</color>
 
 
     <!--状态栏的背景色-->

@@ -15,7 +15,8 @@
             android:theme="@style/Base.Theme.DesignDemo" />
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/Base.Theme.DesignDemo"></activity>
+            android:theme="@style/Base.Theme.DesignDemo">
+        </activity>
         <activity
             android:name=".activity.ToolbarActivity"
             android:theme="@style/Base.Theme.DesignDemo" />
@@ -26,6 +27,12 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
+            android:theme="@style/Base.Theme.DesignDemo">
+
+        </activity>
+
+        <activity
+            android:name=".activity.FragActivity"
             android:theme="@style/Base.Theme.DesignDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,36 +4,37 @@
     <group >
         <item
             android:id="@+id/nav_home"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/iconfont_home"
+            android:checked="true"
             android:checkable="true"
-            android:title="Home"/>
+            android:title="了解会员权限"/>
         <item
             android:id="@+id/nav_messages"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/iconfont_blog"
             android:checkable="true"
-            android:title="Messages"/>
+            android:title="QQ钱包"/>
         <item
             android:id="@+id/nav_friends"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/iconfont_custom_view"
             android:checkable="true"
-            android:title="Friends"/>
+            android:title="个性装扮"/>
         <item
             android:id="@+id/nav_discussion"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/iconfont_custom_view"
             android:checkable="true"
-            android:title="Discussion"/>
+            android:title="我的收藏" />
     </group>
 
-    <item android:title="Sub items">
+    <item android:title="其他">
         <menu>
             <item
-                android:icon="@mipmap/ic_launcher"
+                android:icon="@drawable/iconfont_custom_view"
                 android:checkable="true"
-                android:title="Sub item 1"/>
+                android:title="设置"/>
             <item
-                android:icon="@mipmap/ic_launcher"
+                android:icon="@drawable/iconfont_custom_view"
                 android:checkable="true"
-                android:title="Sub item 2"/>
+                android:title="夜间模式"/>
         </menu>
     </item>
 

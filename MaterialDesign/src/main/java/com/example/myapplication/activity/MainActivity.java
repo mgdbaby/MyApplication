@@ -80,6 +80,7 @@ public class MainActivity extends FragmentActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private ActionBarDrawerToggle drawerToggle;
+    private MenuItem mPreMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +112,7 @@ public class MainActivity extends FragmentActivity {
 
         setupDrawerContent(navigationView);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            private MenuItem mPreMenuItem;
+
 
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
