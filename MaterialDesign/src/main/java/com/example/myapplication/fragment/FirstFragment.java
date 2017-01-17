@@ -85,6 +85,7 @@ public class FirstFragment extends Fragment {
 
         GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 2);
         recyclerViewData.setLayoutManager(gridLayoutManager2);
+        //你好
         recyclerViewData.setHasFixedSize(true);
         recyclerViewData.setAdapter(typeAdapter);
     }
