@@ -3,8 +3,6 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
     android:background="@color/text_iconColor">
 
     <LinearLayout
@@ -13,66 +11,78 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
 
         <ImageView
             android:id="@+id/firstImage"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_tab_msg_h" />
+            android:src="@drawable/bottom_add_green" />
         <TextView
             android:id="@+id/textFirst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="微信"
-            android:textSize="12sp"
-            android:textColor="@color/tab_green"/>
+            android:text="添加"
+            android:textSize="12sp"/>
 
     </LinearLayout>
     <LinearLayout
         android:id="@+id/secondTab"
         android:layout_width="0dp"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
 
         <ImageView
             android:id="@+id/secondImage"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_tab_contact" />
+            android:src="@drawable/bottom_form_gray" />
 
         <TextView
             android:id="@+id/textSecond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="通讯录"
-            android:textSize="12sp"
-            android:textColor="@color/tab_gray"/>
+            android:text="报表"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/thirdTab"
         android:layout_width="0dp"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
 
         <ImageView
             android:id="@+id/thirdImage"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_tab_moments" />
+            android:src="@drawable/bottom_forecast_gray" />
 
         <TextView
             android:id="@+id/textThird"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发现"
-            android:textSize="12sp"
-            android:textColor="@color/tab_gray"/>
+            android:text="预测"
+            android:textSize="12sp" />
 
     </LinearLayout>
 </LinearLayout>

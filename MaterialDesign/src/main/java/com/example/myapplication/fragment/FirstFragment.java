@@ -1,6 +1,8 @@
 package com.example.myapplication.fragment;
 
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,13 +25,18 @@ import java.util.List;
 public class FirstFragment extends Fragment {
 
     private RecyclerView recyclerViewType;
+    private RecyclerView recyclerViewData;
+
     private List<TypeBean> typeBeanList;
     private TypeAdapter typeAdapter;
+    private TextInputLayout textInputLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         recyclerViewType = (RecyclerView) view.findViewById(R.id.recyclerViewType);
+        recyclerViewData = (RecyclerView) view.findViewById(R.id.recyclerViewData);
+        textInputLayout = (TextInputLayout) view.findViewById(R.id.layoutMoneyNum);
         return view;
 
     }
@@ -39,36 +46,46 @@ public class FirstFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         typeBeanList = new ArrayList<TypeBean>();
-        typeBeanList.add(new TypeBean("你好", null, 0));
-        typeBeanList.add(new TypeBean("你好+1", null, 0));
-        typeBeanList.add(new TypeBean("你好+2", null, 0));
-        typeBeanList.add(new TypeBean("你好+3", null, 0));
-        typeBeanList.add(new TypeBean("你好+4", null, 0));
-        typeBeanList.add(new TypeBean("你好+5", null, 0));
-        typeBeanList.add(new TypeBean("你好+6", null, 0));
-        typeBeanList.add(new TypeBean("你好+7", null, 0));
-        typeBeanList.add(new TypeBean("你好", null, 0));
-        typeBeanList.add(new TypeBean("你好+1", null, 0));
-        typeBeanList.add(new TypeBean("你好+2", null, 0));
-        typeBeanList.add(new TypeBean("你好+3", null, 0));
-        typeBeanList.add(new TypeBean("你好+4", null, 0));
-        typeBeanList.add(new TypeBean("你好+5", null, 0));
-        typeBeanList.add(new TypeBean("你好+6", null, 0));
-        typeBeanList.add(new TypeBean("你好+7", null, 0));
+        Resources resources = getActivity().getResources();
+        typeBeanList.add(new TypeBean("号码", resources.getDrawable(R.drawable.icon_num, null), 0));
+        typeBeanList.add(new TypeBean("你好+1", resources.getDrawable(R.drawable.icon_shengxiao, null), 0));
+        typeBeanList.add(new TypeBean("单/双", resources.getDrawable(R.drawable.icon_single, null), 0));
+        typeBeanList.add(new TypeBean("大/小", resources.getDrawable(R.drawable.icon_small, null), 0));
+        typeBeanList.add(new TypeBean("号码", resources.getDrawable(R.drawable.icon_num, null), 0));
+        typeBeanList.add(new TypeBean("波色", resources.getDrawable(R.drawable.icon_bonson, null), 0));
+        typeBeanList.add(new TypeBean("单/双", resources.getDrawable(R.drawable.icon_single, null), 0));
+        typeBeanList.add(new TypeBean("大/小", resources.getDrawable(R.drawable.icon_small, null), 0));
+        typeBeanList.add(new TypeBean("号码", resources.getDrawable(R.drawable.icon_num, null), 0));
+        typeBeanList.add(new TypeBean("你好+1", resources.getDrawable(R.drawable.icon_shengxiao, null), 0));
+        typeBeanList.add(new TypeBean("单/双", resources.getDrawable(R.drawable.icon_single, null), 0));
+        typeBeanList.add(new TypeBean("大/小", resources.getDrawable(R.drawable.icon_small, null), 0));
+        typeBeanList.add(new TypeBean("号码", resources.getDrawable(R.drawable.icon_num, null), 0));
+        typeBeanList.add(new TypeBean("你好+1", resources.getDrawable(R.drawable.icon_shengxiao, null), 0));
+        typeBeanList.add(new TypeBean("单/双", resources.getDrawable(R.drawable.icon_single, null), 0));
+        typeBeanList.add(new TypeBean("大/小", resources.getDrawable(R.drawable.icon_small, null), 0));
 
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 4);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 5);
         recyclerViewType.setLayoutManager(gridLayoutManager);
         recyclerViewType.setHasFixedSize(true);
-        typeAdapter = new TypeAdapter(recyclerViewType.getContext(), typeBeanList);
+        typeAdapter = new TypeAdapter(getActivity(), typeBeanList);
         recyclerViewType.setAdapter(typeAdapter);
 
 
         typeAdapter.setOnRecyclerItemClickListener(new TypeAdapter.OnRecyclerItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+
+//                view.setBackgroundResource(R.drawable.recycle_bg);
                 Toast.makeText(getActivity(), typeBeanList.get(position).getContent(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        textInputLayout.setHint("金额(元)");
+
+        GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity(), 2);
+        recyclerViewData.setLayoutManager(gridLayoutManager2);
+        recyclerViewData.setHasFixedSize(true);
+        recyclerViewData.setAdapter(typeAdapter);
     }
 }

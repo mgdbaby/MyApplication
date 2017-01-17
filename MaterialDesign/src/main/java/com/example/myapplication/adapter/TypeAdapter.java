@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -56,15 +57,18 @@ public class TypeAdapter extends RecyclerView.Adapter<BaseViewHolder> implements
     public void onBindViewHolder(BaseViewHolder baseViewHolder, int position) {
         TypeSelectViewHolder holder = (TypeSelectViewHolder) baseViewHolder;
         holder.typeText.setText(typeBeanList.get(position).getContent());
+        holder.typeImage.setImageDrawable(typeBeanList.get(position).getDrawable());
         holder.itemView.setTag(position);
     }
 
     class TypeSelectViewHolder extends BaseViewHolder {
         TextView typeText;
+        ImageView typeImage;
 
         public TypeSelectViewHolder(View view, int viewType) {
             super(view, viewType);
             typeText = (TextView) view.findViewById(R.id.itemText);
+            typeImage = (ImageView) view.findViewById(R.id.itemImage);
         }
     }
 

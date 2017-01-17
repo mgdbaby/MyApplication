@@ -1,6 +1,6 @@
 package com.example.myapplication.adapter;
 
-import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 /**
  * Created by vargo on 2016/12/14.
@@ -8,12 +8,12 @@ import android.graphics.Bitmap;
 
 public class TypeBean {
     String content;
-    Bitmap bitmap ;
+    Drawable drawable ;
     int type;
 
-    public TypeBean(String content, Bitmap bitmap, int type) {
+    public TypeBean(String content, Drawable drawable, int type) {
         this.content = content;
-        this.bitmap = bitmap;
+        this.drawable = drawable;
         this.type = type;
     }
 
@@ -25,12 +25,12 @@ public class TypeBean {
         this.content = content;
     }
 
-    public Bitmap getBitmap() {
-        return bitmap;
+    public Drawable getDrawable() {
+        return drawable;
     }
 
-    public void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
+    public void setDrawable(Drawable drawable) {
+        this.drawable = drawable;
     }
 
     public int getType() {

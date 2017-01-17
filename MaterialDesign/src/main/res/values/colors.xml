@@ -11,6 +11,11 @@
     <color name="tab_green">#46c01c</color>
     <color name="primaryColorBelow">#01b3a1</color>
 
+    <color name="icon_orange">#f06353</color>
+    <color name="icon_yellow">#f7b63c</color>
+    <color name="icon_blue">#1976d2</color>
+    <color name="icon_red">#f75c5c</color>
+    <color name="icon_green">#2bab92</color>
 
     <!--状态栏的背景色-->
     <color name="darkPrimaryColor">#00796B</color>

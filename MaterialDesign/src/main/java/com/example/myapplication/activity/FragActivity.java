@@ -138,7 +138,7 @@ public class FragActivity extends FragmentActivity {
                     fragmentFirst = new FirstFragment();
                     transaction.add(R.id.frameLayout, fragmentFirst);
                 }
-                firstImage.setImageResource(R.drawable.ic_tab_msg_h);
+                firstImage.setImageResource(R.drawable.bottom_add_green);
                 textFirst.setTextColor(ContextCompat.getColor(this, R.color.primaryColor));
                 break;
             case 1:
@@ -148,7 +148,7 @@ public class FragActivity extends FragmentActivity {
                     fragmentSecond = new SecondFragment();
                     transaction.add(R.id.frameLayout, fragmentSecond);
                 }
-                secondImage.setImageResource(R.drawable.ic_tab_contact_h);
+                secondImage.setImageResource(R.drawable.bottom_form_green);
                 textSecond.setTextColor(ContextCompat.getColor(this, R.color.primaryColor));
                 break;
             case 2:
@@ -158,7 +158,7 @@ public class FragActivity extends FragmentActivity {
                     fragmentThird = new ThirdFragment();
                     transaction.add(R.id.frameLayout, fragmentThird);
                 }
-                thirdImage.setImageResource(R.drawable.ic_tab_moments_h);
+                thirdImage.setImageResource(R.drawable.bottom_forecast_green);
                 textThird.setTextColor(ContextCompat.getColor(this, R.color.primaryColor));
                 break;
             default:
@@ -170,9 +170,9 @@ public class FragActivity extends FragmentActivity {
 
     //将所有图片切换成非选择色
     private void resetImg() {
-        firstImage.setImageResource(R.drawable.ic_tab_msg);
-        secondImage.setImageResource(R.drawable.ic_tab_contact);
-        thirdImage.setImageResource(R.drawable.ic_tab_moments);
+        firstImage.setImageResource(R.drawable.bottom_add_gray);
+        secondImage.setImageResource(R.drawable.bottom_form_gray);
+        thirdImage.setImageResource(R.drawable.bottom_forecast_gray);
 
         textFirst.setTextColor(ContextCompat.getColor(this, R.color.tab_gray));
         textSecond.setTextColor(ContextCompat.getColor(this, R.color.tab_gray));

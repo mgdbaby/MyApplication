@@ -3,71 +3,124 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/lightPrimaryColor"
-    >
+    android:layout_height="match_parent">
     <!--android:background="#ded8d8"-->
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/layoutCustomerInfo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="#ffffff">
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textCustomerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="张三李四"/>
 
-    <LinearLayout
+
+        <TextView
+            android:id="@+id/textSubtotal"
+            android:layout_toLeftOf="@+id/btnSaveForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:text="小计(元)：500"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnSaveForm"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/icon_gou36"
+            app:fabSize="mini" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_below="@+id/textCustomerName">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="类型："/>
-
+            android:textSize="14sp"
+            android:text="已选择"
+            android:gravity="bottom|left"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"/>
 
         <TextView
             android:id="@+id/textTypeData"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_alignParentLeft="true"
-            android:text="fdffdfdfdfd"
-            android:textColor="#ffffff" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/text_shape_stroke"
+            android:elevation="1.5dp"/>
 
-        <EditText
-            android:id="@+id/editMoneyCount"
-            android:layout_marginRight="10dp"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:inputType="number"
-            android:text="100000"
-            android:gravity="center"/>
-        <!--<EditText-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:inputType="number"-->
-            <!--android:text="100000"-->
-            <!--android:gravity="center"-->
-            <!--android:lineSpacingExtra="0dp"-->
-            <!--android:textColor="#000000"-->
-            <!--android:textSize="14sp"/>-->
-        <!--<Button-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:gravity="center"-->
-            <!--android:text="确认"/>-->
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/btnAddData"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layoutMoneyNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:src="@mipmap/icon_gou36"
-            app:fabSize="mini"
-            android:layout_gravity="center"/>
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <EditText
+                android:id="@+id/editMoneyCount"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/btnAddData"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="10dp"
+            android:padding="8dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/button_add"
+            android:background="@drawable/text_shape_stroke2"
+            android:elevation="8dp" />
     </LinearLayout>
 
     <View
@@ -75,11 +128,28 @@
         android:layout_height="0.4dp"
         android:background="@color/driverColor"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewType"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@color/lightPrimaryColor">
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
 
-    </android.support.v7.widget.RecyclerView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="为你推荐"
+            android:textSize="14sp"
+            android:textColor="#000000"/>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewType"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="125dp">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
 </LinearLayout>
