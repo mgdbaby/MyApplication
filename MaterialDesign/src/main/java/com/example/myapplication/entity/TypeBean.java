@@ -1,4 +1,4 @@
-package com.example.myapplication.adapter;
+package com.example.myapplication.entity;
 
 import android.graphics.drawable.Drawable;
 

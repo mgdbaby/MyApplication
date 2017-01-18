@@ -5,11 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.entity.TypeBean;
+import com.example.myapplication.entity.SelectDataBean;
 import com.example.myapplication.viewholder.BaseViewHolder;
 
 import java.util.List;
@@ -18,38 +17,38 @@ import java.util.List;
  * Created by vargo on 2016/12/14.
  */
 
-public class TypeAdapter extends RecyclerView.Adapter<BaseViewHolder> implements View.OnClickListener {
-    private List<TypeBean> typeBeanList;
+public class SelectAdapter extends RecyclerView.Adapter<BaseViewHolder> implements View.OnClickListener {
+    private List<SelectDataBean> selectDataBeenList;
     private LayoutInflater inflater;
 
     private OnRecyclerItemClickListener itemClickListener;
 
-    public TypeAdapter(Context context, List<TypeBean> typeBeanList) {
-        this.typeBeanList = typeBeanList;
+    public SelectAdapter(Context context, List<SelectDataBean> selectDataBeenList) {
+        this.selectDataBeenList = selectDataBeenList;
         this.inflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getItemCount() {
-        return typeBeanList.size();
+        return selectDataBeenList.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        return typeBeanList.get(position).getType();
+        return selectDataBeenList.get(position).getSelectType();
     }
 
-    public TypeBean getChatBean(int position) {
-        TypeBean chatBean = null;
-        if (typeBeanList != null && position < typeBeanList.size()) {
-            chatBean = typeBeanList.get(position);
+    public SelectDataBean getChatBean(int position) {
+        SelectDataBean chatBean = null;
+        if (selectDataBeenList != null && position < selectDataBeenList.size()) {
+            chatBean = selectDataBeenList.get(position);
         }
         return chatBean;
     }
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.lhc_type_item, parent, false);
+        View view = inflater.inflate(R.layout.select_type, parent, false);
         BaseViewHolder holder = new TypeSelectViewHolder(view, viewType);
         view.setOnClickListener(this);
         return holder;
@@ -58,19 +57,17 @@ public class TypeAdapter extends RecyclerView.Adapter<BaseViewHolder> implements
     @Override
     public void onBindViewHolder(BaseViewHolder baseViewHolder, int position) {
         TypeSelectViewHolder holder = (TypeSelectViewHolder) baseViewHolder;
-        holder.typeText.setText(typeBeanList.get(position).getContent());
-        holder.typeImage.setImageDrawable(typeBeanList.get(position).getDrawable());
+        holder.typeText.setText(selectDataBeenList.get(position).getContext());
+        holder.typeText.setBackground(selectDataBeenList.get(position).getDrawable());
         holder.itemView.setTag(position);
     }
 
     class TypeSelectViewHolder extends BaseViewHolder {
         TextView typeText;
-        ImageView typeImage;
 
         public TypeSelectViewHolder(View view, int viewType) {
             super(view, viewType);
             typeText = (TextView) view.findViewById(R.id.itemText);
-            typeImage = (ImageView) view.findViewById(R.id.itemImage);
         }
     }
 

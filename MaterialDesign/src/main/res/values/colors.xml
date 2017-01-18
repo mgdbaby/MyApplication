@@ -46,4 +46,7 @@
     <!--android:windowBackground:  工作区的背景色-->
     <!--android:navigationBarColor: 手机最底下的home键-->
 
+    <color name="red_normal">#FF0000</color>
+    <color name="red_pressed">#FF6666</color>
+
 </resources>

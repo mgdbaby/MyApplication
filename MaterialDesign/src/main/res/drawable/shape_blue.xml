@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 实心 -->
-    <solid android:color="#ffffff"/>
+    <solid android:color="@color/icon_blue"/>
     <!-- 渐变 -->
     <!--<gradient-->
         <!--android:startColor="@color/primaryColor"-->
@@ -13,9 +13,14 @@
         <!--android:color="@color/driverColor"/>-->
 
     <stroke
-        android:width="0.1dp"
-        android:color="@color/text_iconColor"/>
+        android:width="0.4dp"
+        android:color="#dcdcdc"/>
     <!-- 圆角 -->
     <corners
-        android:radius="5dp"/>
+        android:radius="20dp"/>
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp"/>
 </shape>

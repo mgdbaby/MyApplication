@@ -9,10 +9,21 @@ import org.xutils.x;
  */
 
 public class App extends Application {
+    private static App instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
         x.Ext.init(this);
+
+        if (instance == null) {
+            instance = this;
+        }
+    }
+
+
+    public static App getInstance() {
+        return instance;
     }
 }
 
