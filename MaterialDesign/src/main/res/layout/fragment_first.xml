@@ -164,7 +164,6 @@
             android:maxLines="1"
             android:textSize="15sp"
             android:padding="8dp"
-            android:text="49"
             android:gravity="center"
             android:textColor="@color/darkPrimaryColor"
             android:background="@drawable/text_shape_stroke"

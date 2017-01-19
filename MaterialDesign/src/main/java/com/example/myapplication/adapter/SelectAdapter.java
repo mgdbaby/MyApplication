@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -21,7 +22,7 @@ public class SelectAdapter extends RecyclerView.Adapter<BaseViewHolder> implemen
     private List<SelectDataBean> selectDataBeenList;
     private LayoutInflater inflater;
 
-    private OnRecyclerItemClickListener itemClickListener;
+    private OnItemClickListener itemClickListener;
 
     public SelectAdapter(Context context, List<SelectDataBean> selectDataBeenList) {
         this.selectDataBeenList = selectDataBeenList;
@@ -48,26 +49,57 @@ public class SelectAdapter extends RecyclerView.Adapter<BaseViewHolder> implemen
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.select_type, parent, false);
-        BaseViewHolder holder = new TypeSelectViewHolder(view, viewType);
+        View view = null;
+        BaseViewHolder holder = null;
+        if (viewType == 0){
+            view = inflater.inflate(R.layout.select_type, parent, false);
+            holder = new SelectNumViewHolder(view, viewType);
+        }else if(viewType == 1){
+            view = inflater.inflate(R.layout.lhc_type_item, parent, false);
+            holder = new SelectOtherViewHolder(view, viewType);
+        }
         view.setOnClickListener(this);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(BaseViewHolder baseViewHolder, int position) {
-        TypeSelectViewHolder holder = (TypeSelectViewHolder) baseViewHolder;
-        holder.typeText.setText(selectDataBeenList.get(position).getContext());
-        holder.typeText.setBackground(selectDataBeenList.get(position).getDrawable());
-        holder.itemView.setTag(position);
+        int viewType = (baseViewHolder == null ? -1 : baseViewHolder.getViewType());
+
+        if(viewType == 0){
+            SelectNumViewHolder holder = (SelectNumViewHolder) baseViewHolder;
+            holder.typeText.setText(selectDataBeenList.get(position).getContext());
+            holder.typeText.setBackground(selectDataBeenList.get(position).getDrawable());
+            holder.itemView.setTag(position);
+        }else if(viewType == 1){
+            SelectOtherViewHolder holder = (SelectOtherViewHolder) baseViewHolder;
+            holder.typeText.setText(selectDataBeenList.get(position).getContext());
+            holder.typeImage.setImageDrawable(selectDataBeenList.get(position).getDrawable());
+            holder.itemView.setTag(position);
+        }
+
+
+
+
     }
 
-    class TypeSelectViewHolder extends BaseViewHolder {
+    class SelectNumViewHolder extends BaseViewHolder {
         TextView typeText;
 
-        public TypeSelectViewHolder(View view, int viewType) {
+        public SelectNumViewHolder(View view, int viewType) {
             super(view, viewType);
             typeText = (TextView) view.findViewById(R.id.itemText);
+        }
+    }
+
+    class SelectOtherViewHolder extends BaseViewHolder {
+        TextView typeText;
+        ImageView typeImage;
+
+        public SelectOtherViewHolder(View view, int viewType) {
+            super(view, viewType);
+            typeText = (TextView) view.findViewById(R.id.itemText);
+            typeImage = (ImageView) view.findViewById(R.id.itemImage);
         }
     }
 
@@ -81,11 +113,11 @@ public class SelectAdapter extends RecyclerView.Adapter<BaseViewHolder> implemen
     }
 
     //暴露给外面的一个点击接口
-    public void setOnRecyclerItemClickListener(OnRecyclerItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.itemClickListener = listener;
     }
 
-    public interface OnRecyclerItemClickListener {
+    public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
 }

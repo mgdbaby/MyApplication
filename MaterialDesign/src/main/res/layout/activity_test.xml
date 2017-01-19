@@ -4,17 +4,15 @@
     android:id="@+id/activity_test"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#00000000"
+    android:background="@color/text_iconColor"
     tools:context="com.example.myapplication.activity.TestActivity">
 
     <android.support.v7.widget.RecyclerView
         android:padding="15dp"
         android:id="@+id/recyclerViewSelect"
         android:layout_alignParentBottom="true"
-        android:background="@color/text_iconColor"
         android:layout_width="match_parent"
         android:layout_height="350dp">
-
     </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

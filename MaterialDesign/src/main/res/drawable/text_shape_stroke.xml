@@ -14,7 +14,7 @@
 
     <stroke
         android:width="0.1dp"
-        android:color="@color/text_iconColor"/>
+        android:color="@color/driverColor"/>
     <!-- 圆角 -->
     <corners
         android:radius="5dp"/>
