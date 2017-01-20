@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -18,49 +19,91 @@ import java.util.List;
  */
 
 public class DataAdapter extends RecyclerView.Adapter<BaseViewHolder> implements View.OnClickListener {
-    private List<DataBean> dataBeanList;
+    private List<DataBean> selectDataBeenList;
     private LayoutInflater inflater;
 
-    private OnRecyclerItemClickListener itemClickListener;
+    private OnItemClickListener itemClickListener;
 
-    public DataAdapter(Context context, List<DataBean> dataBeanList) {
-        this.dataBeanList = dataBeanList;
+    public DataAdapter(Context context, List<DataBean> selectDataBeenList) {
+        this.selectDataBeenList = selectDataBeenList;
         this.inflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getItemCount() {
-        return dataBeanList.size();
+        return selectDataBeenList.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return selectDataBeenList.get(position).getLayoutType();
+    }
+
+    public DataBean getChatBean(int position) {
+        DataBean chatBean = null;
+        if (selectDataBeenList != null && position < selectDataBeenList.size()) {
+            chatBean = selectDataBeenList.get(position);
+        }
+        return chatBean;
+    }
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.lhc_data_item, parent, false);
-        BaseViewHolder holder = new DataInfoViewHolder(view, viewType);
+        View view = null;
+        BaseViewHolder holder = null;
+        if (viewType == 0){
+            view = inflater.inflate(R.layout.select_type, parent, false);
+            holder = new SelectNumViewHolder(view, viewType);
+        }else if(viewType == 1){
+            view = inflater.inflate(R.layout.lhc_type_item, parent, false);
+            holder = new SelectOtherViewHolder(view, viewType);
+        }
         view.setOnClickListener(this);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(BaseViewHolder baseViewHolder, int position) {
-        DataInfoViewHolder holder = (DataInfoViewHolder) baseViewHolder;
-        holder.dataType.setText(dataBeanList.get(position).getDataType());
-        holder.dataMoney.setText(dataBeanList.get(position).getDataMoney());
-        holder.itemView.setTag(position);
+        int viewType = (baseViewHolder == null ? -1 : baseViewHolder.getViewType());
+
+        if(viewType == 0){
+            SelectNumViewHolder holder = (SelectNumViewHolder) baseViewHolder;
+            holder.typeText.setText(selectDataBeenList.get(position).getContext());
+            holder.typeText.setBackground(selectDataBeenList.get(position).getDrawable());
+            holder.itemView.setTag(position);
+        }else if(viewType == 1){
+            SelectOtherViewHolder holder = (SelectOtherViewHolder) baseViewHolder;
+            holder.typeText.setText(selectDataBeenList.get(position).getContext());
+            holder.typeImage.setImageDrawable(selectDataBeenList.get(position).getDrawable());
+            holder.itemView.setTag(position);
+        }
+
+
+
+
     }
 
-    class DataInfoViewHolder extends BaseViewHolder {
-        TextView dataType;
-        TextView dataMoney;
+    //文字加背景
+    public class SelectNumViewHolder extends BaseViewHolder {
+        TextView typeText;
 
-        public DataInfoViewHolder(View view, int viewType) {
+        public SelectNumViewHolder(View view, int viewType) {
             super(view, viewType);
-            dataType = (TextView) view.findViewById(R.id.dataType);
-            dataMoney = (TextView) view.findViewById(R.id.dataMoney);
+            typeText = (TextView) view.findViewById(R.id.itemText);
         }
     }
 
+    //图案加文字
+    public class SelectOtherViewHolder extends BaseViewHolder {
+        TextView typeText;
+        ImageView typeImage;
+
+        public SelectOtherViewHolder(View view, int viewType) {
+            super(view, viewType);
+            typeText = (TextView) view.findViewById(R.id.itemText);
+            typeImage = (ImageView) view.findViewById(R.id.itemImage);
+        }
+    }
 
     @Override
     public void onClick(View view) {
@@ -71,11 +114,11 @@ public class DataAdapter extends RecyclerView.Adapter<BaseViewHolder> implements
     }
 
     //暴露给外面的一个点击接口
-    public void setOnRecyclerItemClickListener(OnRecyclerItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         this.itemClickListener = listener;
     }
 
-    public interface OnRecyclerItemClickListener {
+    public interface OnItemClickListener {
         void onItemClick(View view, int position);
     }
 }

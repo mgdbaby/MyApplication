@@ -49,8 +49,7 @@ public class WrapHeightGridLayoutManager extends GridLayoutManager {
         }
     }
 
-    private void measureScrapChild(RecyclerView.Recycler recycler, int position, int widthSpec,
-                                   int heightSpec, int[] measuredDimension) {
+    private void measureScrapChild(RecyclerView.Recycler recycler, int position, int widthSpec, int heightSpec, int[] measuredDimension) {
 
         View view = recycler.getViewForPosition(position);
 

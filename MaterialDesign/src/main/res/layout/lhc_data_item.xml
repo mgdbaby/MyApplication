@@ -3,33 +3,46 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:background="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true">
+    android:paddingLeft="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
 
+    <LinearLayout
+        android:id="@+id/item_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="20"
+            android:gravity="left"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="14sp"-->
+            <!--android:text="&#45;&#45;"-->
+            <!--android:gravity="left"/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/textMoney"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="14sp"-->
+            <!--android:text="100000"-->
+            <!--android:gravity="left"/>-->
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/dataType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="20"
-        android:gravity="left"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="--"
-        android:gravity="left"/>
-    <TextView
-        android:id="@+id/dataMoney"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="100000"
-        android:gravity="left"/>
-
-
+        android:id="@+id/textDelete"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
 
 </LinearLayout>

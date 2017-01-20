@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
-            android:text="小计(元):500"/>
+            android:text="小计(元):0"/>
 
 
         <ImageView
@@ -104,19 +104,13 @@
             android:background="@color/driverColor"
             android:layout_above="@+id/recyclerViewData"/>
 
-        <android.support.v7.widget.RecyclerView
+        <com.example.myapplication.widget.ItemRemoveRecyclerView
             android:id="@+id/recyclerViewData"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/btnSelectCustomer">
 
-        </android.support.v7.widget.RecyclerView>
-        <!--<com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView-->
-            <!--android:id="@+id/recyclerViewData"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_below="@+id/textCustomerName"-->
-            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+        </com.example.myapplication.widget.ItemRemoveRecyclerView>
 
 
     </RelativeLayout>

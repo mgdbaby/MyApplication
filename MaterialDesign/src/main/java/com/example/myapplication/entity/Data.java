@@ -8,5 +8,5 @@ import java.util.List;
  */
 
 public class Data {
-    private static List<DataBean> numList = new ArrayList<DataBean>();
+    private static List<DataListBean> numList = new ArrayList<DataListBean>();
 }

@@ -9,10 +9,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.myapplication.LConfig;
 import com.example.myapplication.R;
-import com.example.myapplication.SelectConfig;
-import com.example.myapplication.adapter.SelectAdapter;
-import com.example.myapplication.entity.SelectDataBean;
+import com.example.myapplication.adapter.DataAdapter;
+import com.example.myapplication.entity.DataBean;
 import com.example.myapplication.widget.WrapHeightGridLayoutManager;
 
 import org.xutils.view.annotation.ContentView;
@@ -29,8 +29,8 @@ public class DialogSelectNum extends Activity {
     @ViewInject(R.id.recyclerViewSelect)
     private RecyclerView recyclerViewSelect;
 
-    private List<SelectDataBean> selectDataList = new ArrayList<SelectDataBean>();;
-    private SelectAdapter dataAdapter;
+    private List<DataBean> selectDataList = new ArrayList<DataBean>();;
+    private DataAdapter dataAdapter;
     private WrapHeightGridLayoutManager gridViewManager;
 
 
@@ -48,48 +48,47 @@ public class DialogSelectNum extends Activity {
 
         switch(position){
             case 0:
-                selectDataList = SelectConfig.getNumList(this);
+                selectDataList = LConfig.getNumList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 7);
                 break;
             case 1:
-                selectDataList = SelectConfig.getZodiacList(this);
+                selectDataList = LConfig.getZodiacList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 5);
                 break;
             case 2:
-                selectDataList = SelectConfig.getSingleOrDoubleList(this);
+                selectDataList = LConfig.getSingleOrDoubleList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 2);
                 break;
             case 3:
-                selectDataList = SelectConfig.getBigOrSmallList(this);
+                selectDataList = LConfig.getBigOrSmallList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 2);
                 break;
             case 4:
-                selectDataList = SelectConfig.getBallColorList(this);
+                selectDataList = LConfig.getBallColorList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 3);
                 break;
             case 5:
-                selectDataList = SelectConfig.getHalfBallColorList(this);
+                selectDataList = LConfig.getHalfBallColorList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 6);
                 break;
             case 6:
-                selectDataList = SelectConfig.getHalfList(this);
+                selectDataList = LConfig.getHalfList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 4);
                 break;
             case 7:
-                selectDataList = SelectConfig.getNumList(this);
+                selectDataList = LConfig.getNumList(this);
                 gridViewManager = new WrapHeightGridLayoutManager(this, 7);
                 break;
             default:
                 break;
         }
 
-
-        dataAdapter = new SelectAdapter(this, selectDataList);
+        dataAdapter = new DataAdapter(this, selectDataList);
         recyclerViewSelect.setHasFixedSize(true);
         recyclerViewSelect.setLayoutManager(gridViewManager);
         recyclerViewSelect.setAdapter(dataAdapter);
         recyclerViewSelect.setItemAnimator(new DefaultItemAnimator());
-        dataAdapter.setOnItemClickListener(new SelectAdapter.OnItemClickListener() {
+        dataAdapter.setOnItemClickListener(new DataAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent = new Intent();
